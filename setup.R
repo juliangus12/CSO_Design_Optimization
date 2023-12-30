@@ -9,7 +9,7 @@ install_if_missing <- function(package) {
 }
 
 # List of packages required by the scripts, now including 'bda', 'Hmisc', 'crayon', and 'progress'
-packages <- c("ggplot2", "plyr", "tidyr", "readr", "lubridate", "zoo", "xtable", "Rcpp", "bda", "Hmisc", "plotrix", "gplots", "evir", "dplyr", "ncdf4", "languageserver", "crayon", "progress")
+packages <- c("here", "ggplot2", "plyr", "tidyr", "readr", "lubridate", "zoo", "xtable", "Rcpp", "bda", "Hmisc", "plotrix", "gplots", "evir", "dplyr", "ncdf4", "languageserver", "crayon", "progress")
 
 # Install missing packages
 invisible(sapply(packages, install_if_missing))
@@ -45,24 +45,26 @@ scripts_to_run <- c(
 # Function to source scripts in order
 run_scripts_in_order <- function(scripts) {
   pb <- progress_bar$new(total = length(scripts), clear = FALSE, width = 50)
-  
+
   for (i in seq_along(scripts)) {
     script_path <- file.path(getwd(), scripts[i]) # Construct the full path using the current working directory
-    
-    if(file.exists(script_path)) {
+
+    if (file.exists(script_path)) {
       pb$tick()
       cat(green("\nRunning: "), script_path, "\n")
-      
-      tryCatch({
-        source(script_path)
-        cat(green("Success: "), script_path, "\n")
-      }, error = function(e) {
-        cat(red("Error in script "), script_path, ": ", e$message, "\n")
-        traceback(2) # Print the stack trace of the error
-      })
-      
+
+      tryCatch(
+        {
+          source(script_path)
+          cat(green("Success: "), script_path, "\n")
+        },
+        error = function(e) {
+          cat(red("Error in script "), script_path, ": ", e$message, "\n")
+          traceback(2) # Print the stack trace of the error
+        }
+      )
+
       # Add a page break after every few scripts
-      
     } else {
       cat(yellow("Script not found: "), script_path, "\n")
       cat("Check the file path and ensure it is relative to the working directory: ", getwd(), "\n")

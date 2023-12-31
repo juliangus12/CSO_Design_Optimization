@@ -408,7 +408,7 @@ DensePlot<-function(finlist,burn=1000){
 BM_MCMC<-function(finlist,int=1000,burn=0,end=nrow(finlist$finmat),bline=0){
   bmat<-matrix(NA,nrow(finlist$finmat)-burn,ncol(finlist$finmat))
   bmatest<-matrix(NA,nrow(finlist$finmat)-burn,ncol(finlist$finmat))
-  source("http://www.stat.psu.edu/~mharan/batchmeans.R")
+  source("SourceCode/batchmeans.R")
   #source("/gpfs/group/kzk10/default/private/susquehanna_hydro/Sanjib/ghub/SourceCode/batchmeans.R")
    finmat_bm<-finlist$finmat[burn:end,]
   seqlist<-seq(10,nrow(finmat_bm),by=int)

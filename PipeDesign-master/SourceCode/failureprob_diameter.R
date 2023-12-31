@@ -32,7 +32,7 @@ noaalow<-big$noaalow
 noaaup<-big$noaaup
 
 ######stat
-paramstat<-load(paste(main_path,"/MDRRESULT/stat_widenorm_param_MDR.RData",sep=""))
+paramstat<-load(paste(main_path,"/projections/results/MDRRESULT/stat_widenorm_param_MDR.RData",sep=""))
 paramtime1<-mu_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -56,7 +56,7 @@ runoffcoeff<-c(0.45,0.55,0.65,0.75,0.85)
 ###nonstat
 g<-0
 for (i in 2020:2090){
-infile=paste(main_path,'/MDRRESULT/nonstat_param',i,'.RData',sep="")
+infile=paste(main_path,'/projections/results/MDRRESULT/nonstat_param',i,'.RData',sep="")
 load(infile)
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain

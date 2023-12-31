@@ -33,7 +33,7 @@ noaa<-big$noaa
 noaalow<-big$noaalow
 noaaup<-big$noaaup
 #####stationary
-rtnprd<-load(paste(main_path,"/GTRESULT/stat_widenorm_rtnlevel.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/GTRESULT/stat_widenorm_rtnlevel.RData",sep=''))
 retint21<-retint
 lower21 <- quantile(retint21,0.05)
 median21<-median(retint21)
@@ -43,7 +43,7 @@ low21<-quantile(retint21,0.25)
 upp21<-quantile(retint21,0.75)
 
 ####MDR temp
-rtnprd<-load(paste(main_path,"/MDRRESULT/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/MDRRESULT/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -56,7 +56,7 @@ low22<-quantile(retint22,0.25)
 upp22<-quantile(retint22,0.75)
 
 ###GFDLesm2m_WRF
-rtnprd<-load(paste(main_path,"/GFDLesm2m_WRF/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/GFDLesm2m_WRF/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -70,7 +70,7 @@ upp23<-quantile(retint23,0.75)
 
 
 ###MPIESMLR_RegCM4
-rtnprd<-load(paste(main_path,"/MPIESMLR_RegCM4/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/MPIESMLR_RegCM4/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -83,7 +83,7 @@ low24<-quantile(retint24,0.25)
 upp24<-quantile(retint24,0.75)
 
 ###MPIESMLR_WRF
-rtnprd<-load(paste(main_path,"/MPIESMLR_WRF/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/MPIESMLR_WRF/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -96,7 +96,7 @@ low25<-quantile(retint25,0.25)
 upp25<-quantile(retint25,0.75)
 
 ####GFDLESM2M
-rtnprd<-load(paste(main_path,"/GFDLESM2M/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/GFDLESM2M/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -109,7 +109,7 @@ low26<-quantile(retint26,0.25)
 upp26<-quantile(retint26,0.75)
 
 ##CCSM4
-rtnprd<-load(paste(main_path,"/CCSM4/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/CCSM4/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -122,7 +122,7 @@ low27<-quantile(retint27,0.25)
 upp27<-quantile(retint27,0.75)
 
 ###CanESM2
-rtnprd<-load(paste(main_path,"/CanESM2/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/CanESM2/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -135,7 +135,7 @@ low28<-quantile(retint28,0.25)
 upp28<-quantile(retint28,0.75)
 
 ###INMCM4
-rtnprd<-load(paste(main_path,"/INMCM4/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/INMCM4/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -148,7 +148,7 @@ low29<-quantile(retint29,0.25)
 upp29<-quantile(retint29,0.75)
 
 ####MIROCESM
-rtnprd<-load(paste(main_path,"/MIROCESM/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/MIROCESM/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -161,7 +161,7 @@ low30<-quantile(retint30,0.25)
 upp30<-quantile(retint30,0.75)
 
 ###MIROC5
-rtnprd<-load(paste(main_path,"/MIROC5/nonstat_param2090.RData",sep=''))
+rtnprd<-load(paste(main_path,"/projections/results/MIROC5/nonstat_param2090.RData",sep=''))
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -448,8 +448,5 @@ mtext(xx.label, side=1, line=-2.5, adj=0.45,outer=TRUE, cex=1.3)
 #mtext(z.label, side=4, line=-1.0, outer=TRUE, cex=1.2)
 #mtext(z.label, side=2, line=-30.25, outer=TRUE, cex=1.2)
 #mtext(b.label,side=1,line=-26.5,adj=0.745,outer=TRUE,cex=1.4)
-par(cex=1.0)
- if(postscript==TRUE) {
-        dev.off()
-}
+dev.off()
 

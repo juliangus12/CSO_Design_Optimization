@@ -30,7 +30,7 @@ noaalow<-big$noaalow
 noaaup<-big$noaaup
 
 ######stationary
-paramstat<-load(paste(main_path,"/GTRESULT/stat_widenorm_param_GT.RData",sep=''))
+paramstat<-load(paste(main_path,"/projections/results/GTRESULT/stat_widenorm_param_GT.RData",sep=''))
 paramtime1<-mu_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -44,7 +44,7 @@ upperstat <- sapply(1.1:100.1, function (x)
 {  quantile(MCrlstat[x,], 0.95) })
 
 ####Globaltemp
-paramGT<-load(paste(main_path,"/GTRESULT/Mu_nonstat_widenorm_param_GT.RData",sep=''))
+paramGT<-load(paste(main_path,"/projections/results/GTRESULT/Mu_nonstat_widenorm_param_GT.RData",sep=''))
 paramtime1<-mu_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -58,7 +58,7 @@ upperGT <- sapply(1.1:100.1, function (x)
 {  quantile(MCrlGT[x,], 0.95) })
 
 ####Localtemp
-paramLT<-load(paste(main_path,"/LTRESULT/Mu_nonstat_widenorm_param_LT.RData",sep=''))
+paramLT<-load(paste(main_path,"/projections/results/LTRESULT/Mu_nonstat_widenorm_param_LT.RData",sep=''))
 paramtime1<-mu_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -72,7 +72,7 @@ upperLT <- sapply(1.1:100.1, function (x)
 {  quantile(MCrlLT[x,], 0.95) })
 
 #####MDRtemp
-paramMDR<-load(paste(main_path,"/MDRRESULT/Mu_nonstat_widenorm_param_MDR.RData",sep=''))
+paramMDR<-load(paste(main_path,"/projections/results/MDRRESULT/Mu_nonstat_widenorm_param_MDR.RData",sep=''))
 paramtime1<-mu_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -86,7 +86,7 @@ upperMDR <- sapply(1.1:100.1, function (x)
 {  quantile(MCrlMDR[x,], 0.95) })
 
 ######NAO Index
-paramNAO<-load(paste(main_path,"/NAOIndex/Mu_nonstat_widenorm_param_NAO.RData",sep=''))
+paramNAO<-load(paste(main_path,"/projections/results/NAOIndex/Mu_nonstat_widenorm_param_NAO.RData",sep=''))
 paramtime1<-mu_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -100,7 +100,7 @@ upperNAO <- sapply(1.1:100.1, function (x)
 {  quantile(MCrlNAO[x,], 0.95) })
 
 #####Tropicalstorm
-paramTS<-load(paste(main_path,"/TSRESULT/Mu_nonstat_widenorm_param_TS.RData",sep=''))
+paramTS<-load(paste(main_path,"/projections/results/TSRESULT/Mu_nonstat_widenorm_param_TS.RData",sep=''))
 paramtime1<-mu_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -206,7 +206,4 @@ mtext(x.label, side=1, line=-3, adj=0.5,outer=TRUE, cex=1.3)
 #mtext(z.label, side=2, line=-30.25, outer=TRUE, cex=1.2)
 #mtext(b.label,side=1,line=-26.5,adj=0.98,outer=TRUE,cex=1.4)
 par(cex=1.0)
- if(postscript==TRUE) {
-        dev.off()
-}
-
+dev.off()

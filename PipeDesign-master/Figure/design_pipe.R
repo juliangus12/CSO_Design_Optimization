@@ -26,9 +26,9 @@ dia8<-big$dia8
 prob8<-big$prob8
 ##save output
 outfile<-paste("design_pipe.pdf",sep="")
-postscript(outfile,horizontal=FALSE)
+pdf(outfile, width = 11, height = 8.5)  # Adjust width and height as needed
 par(mfrow=c(1,1))
-par(oma=c(26,2.1,2.7,1.75))
+par(oma=c(5, 2, 2, 1))
 par(pin=c(6.2,5.5))
 par(cex=0.8)
 xmin<-min(0.5,0.5)
@@ -135,14 +135,10 @@ z.label='Annual exceedance probability [%]'
 xx.label='Cost factor'
 #xxx.label='a) Ellicott City, Maryland'
 par(new=TRUE)
-mtext(y.label, side=2, line=0.4, outer=TRUE, cex=1.75)
+mtext(y.label, side=2, line=-9, outer=TRUE, cex=1.75)  # Adjust 'line' as needed
 mtext(x.label, side=1, line=-0.15, outer=TRUE, cex=1.75)
-mtext(z.label, side=4, line=0.3, outer=TRUE, cex=1.75)
+mtext(z.label, side=4, line=-9, outer=TRUE, cex=1.75)  # Adjust 'line' as needed
 mtext(xx.label, side=3, line=-0.8, outer=TRUE, cex=1.75)
 #mtext(xxx.label,font=1,side=3,line=1.0,adj=-0.05,outer=TRUE,cex=2.0)
-par(cex=1.0)
- if(postscript==TRUE) {
-        dev.off()
-}
-
+dev.off()
 

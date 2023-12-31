@@ -41,9 +41,9 @@ burnin=10000 # Burnin
 MULTnsgevplots(run2,rm.burn=TRUE,burn=burnin) #Trace Plots Without Burn-In
 MULTncrej(run2,burn=burnin) #RejectionRate
 cred.table<-CredIntervalsGEV(run2,burn=burnin) # Credible Intervals
-save(run2,file=paste(main_path,"/MPIESMLR_WRF/Mu_nonstat_widenorm_run2_RCM.RData",sep=""))
+save(run2,file=paste(main_path,"/projections/results/MPIESMLR_WRF/Mu_nonstat_widenorm_run2_RCM.RData",sep=""))
 cred.table
-save(cred.table,file=paste(main_path,"/MPIESMLR_WRF/Mu_nonstat_widenorm_CI_RCM.RData",sep=""))
+save(cred.table,file=paste(main_path,"/projections/results/MPIESMLR_WRF/Mu_nonstat_widenorm_CI_RCM.RData",sep=""))
 mu0=run2$finmat[,1]
 amu=run2$finmat[,4]
 sigma=exp(run2$finmat[,2])
@@ -57,4 +57,4 @@ gg=2019
  muproj_chain <-muproj[(length(xi)-40000+1):length(xi)]
  sigma_chain <- sigma[(length(sigma)-40000+1):length(sigma)]
  xi_chain <- xi[(length(xi)-40000+1):length(xi)]
-save(muproj_chain,xi_chain,sigma_chain,file=paste(main_path,'/MPIESMLR_WRF/nonstat_param',gg,'.RData',sep=""))}
+save(muproj_chain,xi_chain,sigma_chain,file=paste(main_path,'/projections/results/MPIESMLR_WRF/nonstat_param',gg,'.RData',sep=""))}

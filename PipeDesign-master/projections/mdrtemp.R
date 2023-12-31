@@ -50,9 +50,9 @@ burnin=6000 # Burnin
 MULTnsgevplots(run2,rm.burn=TRUE,burn=burnin) #Trace Plots Without Burn-In
 MULTncrej(run2,burn=burnin) #RejectionRate
 cred.table<-CredIntervalsGEV(run2,burn=burnin) # Credible Intervals
-save(run2,file=paste(main_path,"/MDRRESULT/stat_widenorm_run2_MDR.RData",sep=""))
+save(run2,file=paste(main_path,"/projections/results/MDRRESULT/stat_widenorm_run2_MDR.RData",sep=""))
 cred.table
-save(cred.table,file=paste(main_path,"/MDRRESULT/stat_widenorm_CI_MDR.RData",sep=""))
+save(cred.table,file=paste(main_path,"/projections/results/MDRRESULT/stat_widenorm_CI_MDR.RData",sep=""))
 mu=run2$finmat[,1]
 sigma=exp(run2$finmat[,2])
 xi=run2$finmat[,3]
@@ -60,8 +60,8 @@ mu_chain <-mu[(length(xi)-40000+1):length(xi)]
 sigma_chain <- sigma[(length(sigma)-40000+1):length(sigma)]
 xi_chain <- xi[(length(xi)-40000+1):length(xi)]
 retint<-benreturn(100,mu_chain,sigma_chain,xi_chain)
-save(mu_chain,xi_chain,sigma_chain,file=paste(main_path,"/MDRRESULT/stat_widenorm_param_MDR.RData",sep=""))
-save(retint,file=paste(main_path,"/MDRRESULT/stat_widenorm_rtnlevel.RData",sep=""))
+save(mu_chain,xi_chain,sigma_chain,file=paste(main_path,"/projections/results/MDRRESULT/stat_widenorm_param_MDR.RData",sep=""))
+save(retint,file=paste(main_path,"/projections/results/MDRRESULT/stat_widenorm_rtnlevel.RData",sep=""))
 
 # (2) Mu Non-Stationary
 source(paste(main_path,"/SourceCode/Prior2SourceMu.R",sep=""))
@@ -82,9 +82,9 @@ burnin=10000 # Burnin
 MULTnsgevplots(run2,rm.burn=TRUE,burn=burnin) #Trace Plots Without Burn-In
 MULTncrej(run2,burn=burnin) #RejectionRate
 cred.table<-CredIntervalsGEV(run2,burn=burnin) # Credible Intervals
-save(run2,file=paste(main_path,"/MDRRESULT/Mu_nonstat_widenorm_run2_MDR.RData",sep=""))
+save(run2,file=paste(main_path,"/projections/results/MDRRESULT/Mu_nonstat_widenorm_run2_MDR.RData",sep=""))
  cred.table
- save(cred.table,file=paste(main_path,"/MDRRESULT/Mu_nonstat_widenorm_CI_MDR.RData",sep=""))
+ save(cred.table,file=paste(main_path,"/projections/results/MDRRESULT/Mu_nonstat_widenorm_CI_MDR.RData",sep=""))
  mu0=run2$finmat[,1]
  amu=run2$finmat[,4]
  mu=mu0*(1+amu*tempset[68])
@@ -97,8 +97,8 @@ save(run2,file=paste(main_path,"/MDRRESULT/Mu_nonstat_widenorm_run2_MDR.RData",s
  sigma1_chain <- sigma[(length(sigma)-40000+1):length(sigma)]
  xi1_chain <- xi[(length(xi)-40000+1):length(xi)]
  retint<-benreturn(100,mu_chain,sigma1_chain,xi1_chain)
- save(mu_chain,xi1_chain,sigma1_chain,file=paste(main_path,"/MDRRESULT/Mu_nonstat_widenorm_param_MDR.RData",sep=""))
- save(retint,file=paste(main_path,"/MDRRESULT/Mu_nonstat_widenorm_rtnlevel.RData",sep=""))
+ save(mu_chain,xi1_chain,sigma1_chain,file=paste(main_path,"/projections/results/MDRRESULT/Mu_nonstat_widenorm_param_MDR.RData",sep=""))
+ save(retint,file=paste(main_path,"/projections/results/MDRRESULT/Mu_nonstat_widenorm_rtnlevel.RData",sep=""))
 ####projections
  g=0
  gg=2019
@@ -109,5 +109,5 @@ save(run2,file=paste(main_path,"/MDRRESULT/Mu_nonstat_widenorm_run2_MDR.RData",s
  muproj_chain <-muproj[(length(xi)-40000+1):length(xi)]
  sigma_chain <- sigma[(length(sigma)-40000+1):length(sigma)]
  xi_chain <- xi[(length(xi)-40000+1):length(xi)]
-save(muproj_chain,xi_chain,sigma_chain,file=paste(main_path,'/MDRRESULT/nonstat_param',gg,'.RData',sep=""))}
+save(muproj_chain,xi_chain,sigma_chain,file=paste(main_path,'/projections/results/MDRRESULT/nonstat_param',gg,'.RData',sep=""))}
 

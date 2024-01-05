@@ -40,7 +40,7 @@ This repository hosts the code and data used in the research paper "A Safety Fac
    ```
 4. Execute the `Model_Setup.R` script:
    ```
-   Rscript CSO_Design_Optimization/PipeDesign-master/Model_EXE_Setup.R
+   Rscript CSO_Design_Optimization/PipeDesign-master/Run_Model.R
    ```
    This script processes the data from the dataset directory and stores results in `projections/results`. It also generates figures in the `SampleFigure/` directory.
 ### Removing current results

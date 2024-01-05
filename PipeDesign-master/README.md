@@ -38,9 +38,17 @@ This repository hosts the code and data used in the research paper "A Safety Fac
    ```
    sudo chmod +x CSO_Design_Optimization/PipeDesign-master/PKG_Setup.sh
    ```
-4. Execute the `Model_Setup.R` script:
+4. Go to the PipeDesign-master directory:
    ```
-   Rscript CSO_Design_Optimization/PipeDesign-master/Run_Model.R
+   cd CSO_Design_Optimization/PipeDesign-master/
+   ``` 
+5. Execute the script to get the necessary dependencies:
+   ```
+   sudo ./PKG_Setup.sh
+   ```
+6. Execute the `Model_Setup.R` script:
+   ```
+   Rscript Run_Model.R
    ```
    This script processes the data from the dataset directory and stores results in `projections/results`. It also generates figures in the `SampleFigure/` directory.
 ### Removing current results

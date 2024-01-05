@@ -16,9 +16,6 @@ invisible(sapply(packages, install_if_missing))
 # Load the crayon and progress packages
 library(crayon)
 
-# Set the working directory to the location of the 'PipeDesign-master' directory
-setwd("PipeDesign-master")
-
 # List of scripts to run in order, according to the repository structure
 scripts_to_run <- c(
   "projections/CCSM4.R",
@@ -42,13 +39,10 @@ scripts_to_run <- c(
 
 # Function to source scripts in order
 run_scripts_in_order <- function(scripts) {
-  pb <- progress_bar$new(total = length(scripts), clear = FALSE, width = 50)
-
   for (i in seq_along(scripts)) {
     script_path <- file.path(getwd(), scripts[i]) # Construct the full path using the current working directory
 
     if (file.exists(script_path)) {
-      pb$tick()
       cat(green("\nRunning: "), script_path, "\n")
 
       tryCatch(

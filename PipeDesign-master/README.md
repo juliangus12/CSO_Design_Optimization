@@ -49,9 +49,9 @@ This repository hosts the code and data used in the research paper "A Safety Fac
    sudo chmod -R 777 CSO_Design_Optimization
    ```
 2. Set execution permissions for the setup script:
-  ```
+   ```
    sudo chmod +x CSO_Design_Optimization/PipeDesign-master/Delete_Results.sh
-  ```
+   ```
   This script removes all of the contents recorded in the directories located inside of projections/results but maintains the file structure 
 
 ### License

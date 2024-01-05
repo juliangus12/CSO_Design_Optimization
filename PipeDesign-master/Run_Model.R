@@ -8,7 +8,7 @@ install_if_missing <- function(package) {
   }
 }
 
-packages <- c("here", "ggplot2", "plyr", "tidyr", "readr", "lubridate", "zoo", "xtable", "Rcpp", "bda", "Hmisc", "plotrix", "gplots", "evir", "dplyr", "ncdf4", "languageserver", "crayon")
+packages <- c("here", "ggplot2", "plyr", "tidyr", "readr", "lubridate", "zoo", "xtable", "Rcpp", "bda", "Hmisc", "plotrix", "gplots", "evir", "dplyr", "ncdf4", "xml2", "languageserver", "crayon")
 
 # Install missing packages
 invisible(sapply(packages, install_if_missing))
@@ -17,7 +17,7 @@ invisible(sapply(packages, install_if_missing))
 library(crayon)
 
 # Set the working directory to the location of the 'PipeDesign-master' directory
-setwd("~/Desktop/CSO_Design_Optimization/PipeDesign-master")
+setwd("PipeDesign-master")
 
 # List of scripts to run in order, according to the repository structure
 scripts_to_run <- c(

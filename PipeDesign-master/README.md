@@ -62,6 +62,28 @@ This repository hosts the code and data used in the research paper "A Safety Fac
    ```
   This script removes all of the contents recorded in the directories located inside of projections/results but maintains the file structure 
 
+### Package Versions
+
+- here: 1.0.1
+- ggplot2: 3.4.4
+- plyr: 1.8.9
+- tidyr: 1.3.0
+- readr: 2.1.4
+- lubridate: 1.9.3
+- zoo: 1.8.12
+- xtable: 1.8.4
+- Rcpp: 1.0.11
+- bda: 17.1.2
+- Hmisc: 5.1.1
+- plotrix: 3.8.3
+- gplots: 3.1.3
+- evir: 1.7.4
+- dplyr: 1.1.3
+- ncdf4: 1.21
+- xml2: 1.3.5
+- languageserver: 0.3.16
+- crayon: 1.5.2
+
 ### License
 This project is licensed under the [LICENSE](https://github.com/juliangus12/CSO_Design_Optimization/blob/main/PipeDesign-master/LICENSE) file in the repository.
 

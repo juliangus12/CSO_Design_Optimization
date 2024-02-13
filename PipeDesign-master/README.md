@@ -48,7 +48,7 @@ This repository hosts the code and data used in the research paper "A Safety Fac
    ```
 6. Execute the `Model_Setup.R` script:
    ```
-   Rscript Run_Model.R
+   sudo Rscript Run_Model.R
    ```
    This script processes the data from the dataset directory and stores results in `projections/results`. It also generates figures in the `SampleFigure/` directory.
 ### Removing current results

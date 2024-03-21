@@ -18,13 +18,13 @@ myreturnlevel <- function(t,mu,sigma,xi){
 #--------------------------------------------------------------
 
 ####Historical_AMS_dataset
-infile<-paste(main_path,"/dataset/AMS_ellicott.txt",sep='')
+infile<-paste(main_path,"/PipeDesign-master/dataset/AMS_ellicott.txt",sep='')
 big<-scan(infile,skip=1,list(date=0,depth=0))
 depth<-big$depth 
 datset<-depth*25.4/24
 
 ####NOAA atlas 14
-infile<-paste(main_path,"/dataset/atlas14_Ellicott.txt",sep='')
+infile<-paste(main_path,"/PipeDesign-master/dataset/AMS_ellicott.txt",sep='')
 big<-scan(infile,skip=5,list(rtn=0,noaa=0,noaalow=0,noaaup=0))
 rtn<-big$rtn
 noaa<-big$noaa
@@ -32,7 +32,7 @@ noaalow<-big$noaalow
 noaaup<-big$noaaup
 
 ######stat
-paramstat<-load(paste(main_path,"/projections/results/MDRRESULT/stat_widenorm_param_MDR.RData",sep=""))
+paramstat<-load(paste(main_path,"/PipeDesign-master/projections/results/MDRRESULT/stat_widenorm_param_MDR.RData",sep=""))
 paramtime1<-mu_chain
 paramtime2<-sigma_chain
 paramtime3<-xi_chain
@@ -55,8 +55,9 @@ runoffcoeff<-c(0.45,0.55,0.65,0.75,0.85)
 ####for each available pipe diameter, compute failure probaility under different rainfall projections
 ###nonstat
 g<-0
+Pnstat100 <- numeric(length = 2090 - 2020 + 1) # Initialize Pnstat100 as a numeric vector
 for (i in 2020:2090){
-infile=paste(main_path,'/projections/results/MDRRESULT/nonstat_param',i,'.RData',sep="")
+infile=paste(main_path,'/PipeDesign-master/projections/results/MDRRESULT/nonstat_param',i,'.RData',sep="")
 load(infile)
 paramtime1<-muproj_chain
 paramtime2<-sigma_chain
@@ -86,5 +87,7 @@ length<-length(GQstat100)
 Pstat100<-Hstat100[2,2]/length   
 g<-g+1
 Pnstat100[g]<-Hnstat100[2,2]/length 
+
+# saves into PipeDesign-master 
 write.table(Pnstat100,file=paste("MDRRESULT_dia4.txt",sep=""),row.names=FALSE,col.names=FALSE,quote=FALSE)
 }
